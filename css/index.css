@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+    font-family: "Inter", serif;
+    color: #fff;
+    font-optical-sizing: auto;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-clr: rgb(2, 6, 38);
+}
+
+body {
+    background-color: var(--main-clr);
+    color: #fff;
+}
+
+html {
+    margin-top: 0 !important;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0d37;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff00ff, #7700ff, #00ffff);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff00ff, #5500ff, #00cccc);
+}
+
+
+
+
+/* ****************Nabvbar*************** */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    background-color: transparent;
+}
+
+.navbar .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar .links a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 180vh;
+    z-index: -1;
+    background-image: radial-gradient(circle, transparent 0%, rgba(1, 6, 41, 0.969) 91%), url('../assets/dot.svg');
+}
+
+.navbar .logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* ****************Nabvbar*************** */
+
+.main {
+    max-width: 1440px;
+    margin: auto;
+}
+
+
+/* *******************Header****************** */
+.header {
+    width: 100%;
+    height: 100vh;
+    background: url("../assets/lightbg.svg");
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-position: left top;
+    background-size: 40%;
+    background-blend-mode: screen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    gap: 2rem;
+
+}
+
+.code-box {
+    width: 32rem;
+    height: 29rem;
+    background: linear-gradient(90deg, rgba(4, 9, 43, 1) 0%, rgba(12, 18, 64, 1) 83%);
+    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.23);
+}
+
+.header .text {
+    margin-top: -2rem;
+}
+
+.header .text h1 {
+    font-size: 3.7rem;
+    line-height: 4.8rem;
+    font-weight: bold;
+}
+
+.header .text .dev {
+    background: linear-gradient(90deg, rgba(33, 56, 137, 1) 0%, rgba(97, 99, 236, 1) 100%);
+    padding: 0px 12px;
+    border-radius: 8px;
+}
+
+.header .text p {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.header .text p .dev {
+    border-radius: 3px;
+    padding: 0 6px;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+.animated-border {
+    position: relative;
+    background: linear-gradient(90deg, rgba(4, 9, 43, 1) 0%, rgba(12, 18, 64, 1) 100%);
+    color: white;
+    font-weight: 500;
+    padding: 10px 34px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 1rem;
+    transition: .5s ease-in-out;
+}
+
+/* Adding animated gradient border */
+.animated-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    backdrop-filter: blur(15px);
+    padding: 1px;
+    background: linear-gradient(45deg, #ff00ff, #7700ff, #00ffff, #ff00ff);
+    background-size: 300% 300%;
+    animation: moveBorder 3s linear infinite;
+    z-index: -1;
+    transition: .5s ease-in-out;
+}
+
+.animated-border::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    /* This keeps the border effect */
+    background-color: #0a0d37;
+    /* Same as button background */
+    border-radius: 8px;
+    backdrop-filter: blur(15px);
+    transition: .5s ease-in-out;
+    z-index: -1;
+}
+
+/* .animated-border:hover.animated-border::before {
+    transform: translateY(2px);
+}
+
+.animated-border:hover {
+    transform: translateY(-5px) scal;
+} */
+
+@keyframes moveBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animated-border span {
+    margin-left: 5px;
+}
+
+/* *******************Header****************** */
